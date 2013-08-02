@@ -1,0 +1,3 @@
+LINK
+
+main = asText <~ x

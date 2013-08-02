@@ -1,5 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
-module ElmToHtml (elmToHtml, elmToJS) where
+module ElmToHtml (linkedElmToHtml, elmToHtml, elmToJS) where
+
+import Text.Regex
+import Data.List
 
 import Text.Blaze (preEscapedToMarkup)
 import Text.Blaze.Html5 ((!))
@@ -9,6 +12,11 @@ import Network.HTTP.Base (urlEncode)
 
 import qualified Language.Elm as Elm
 import Utils
+
+
+linkedElmToHtml :: String -> String -> String -> String -> H.Html
+linkedElmToHtml name link src1 src2 = elmToHtml name (join src1 src2 link)
+  where join s1 s2 s3 = intercalate ("\n" ++ s2 ++ "\n") (splitRegex (mkRegex s3) s1)
 
 -- | Using a page title and the full source of an Elm program, compile down to
 --   a valid HTML document.
@@ -29,7 +37,6 @@ elmToHtml name src =
         js ! A.src (H.toValue ("/elm-mini.js" :: String)) $ ""
         js $ preEscapedToMarkup (Elm.compile src)
         js $ preEscapedToMarkup ("var runningElmModule = Elm.fullscreen(Elm." ++ Elm.moduleName src ++ ")")
-        googleAnalytics
 
 elmToJS :: String -> String
 elmToJS = Elm.compile
