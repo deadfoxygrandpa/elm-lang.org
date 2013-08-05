@@ -5252,12 +5252,12 @@ Elm.Website.ColorScheme = function(elm){
   var _ = Elm.Color(elm); var Color = _; var hiding={}; for(var k in _){if(k in hiding)continue;eval('var '+k+'=_["'+k+'"]')}
   var _ = Elm.Graphics.Collage(elm); var Graphics = Graphics||{};Graphics.Collage = _; var hiding={}; for(var k in _){if(k in hiding)continue;eval('var '+k+'=_["'+k+'"]')}
   var accent0_0 = A3(rgb, 90, 99, 120);
-  var accent1_1 = A3(rgb, 96, 181, 204);
+  var accent1_1 = A3(rgb, 59, 55, 56);
   var accent2_2 = A3(rgb, 240, 173, 0);
   var accent3_3 = A3(rgb, 234, 21, 122);
   var accent4_4 = A3(rgb, 127, 209, 59);
-  var lightGrey_5 = A3(rgb, 245, 245, 245);
-  var mediumGrey_6 = A3(rgb, 216, 221, 225);
+  var lightGrey_5 = A3(rgb, 198, 61, 15);
+  var mediumGrey_6 = A3(rgb, 71, 26, 108);
   elm.Native = elm.Native||{};
   elm.Native.Website = elm.Native.Website||{};
   var _ = elm.Native.Website.ColorScheme||{};
@@ -5458,36 +5458,35 @@ Elm.Website.Skeleton = function(elm){
   var JS = Elm.JavaScript(elm);
   var _ = Elm.Website.ColorScheme(elm); var Website = Website||{};Website.ColorScheme = _; var hiding={}; for(var k in _){if(k in hiding)continue;eval('var '+k+'=_["'+k+'"]')}
   var Input = Elm.Graphics.Input(elm);
-  var button_1 = function(_15000_8){
+  var button_1 = function(_15000_7){
     return function(){ 
-    switch (_15000_8.ctor) {
+    switch (_15000_7.ctor) {
       case 'Tuple3':
         return function(){
-          var btn_12 = function(alpha_13){
+          var btn_11 = function(alpha_12){
             return A2(flow, down, _L.Cons(function(x){
-              return A2(color, A4(rgba, 200, 200, 200, alpha_13), A4(container, 100, 58, middle, A2(width, 100, centered(A2(Text.color, black, x)))));}(toText(_15000_8._0)),_L.Cons(A2(color, _15000_8._2, A2(spacer, 100, 2)),_L.Nil)));};
-          return A2(link, _15000_8._1, A4(navigation_0.customButton, _15000_8._1, btn_12(0), btn_12(0.1), btn_12(0.2)));}();
+              return A2(color, A4(rgba, 253, 243, 231, alpha_12), A4(container, 100, 58, middle, A2(width, 100, centered(A2(Text.color, black, x)))));}(toText(_15000_7._0)),_L.Cons(A2(color, _15000_7._2, A2(spacer, 100, 2)),_L.Nil)));};
+          return A2(link, _15000_7._1, A4(navigation_0.customButton, _15000_7._1, btn_11(0), btn_11(0.1), btn_11(0.2)));}();
     }_E.Case('Line 11, Column 2') }();};
-  var title_3 = function(w_14){
+  var title_3 = function(w_13){
     return function(){
-      var ttl_15 = function(x){
-        return A2(Text.link, _str('/'), A2(Text.color, black, A2(Text.height, 2, bold(x))));}(toText(_str('Elm')));
-      return A4(container, w_14, 60, midLeft, text(ttl_15));}();};
-  var heading_5 = F2(function(outer_16, inner_17){
+      var ttl_14 = function(x){
+        return A2(Text.link, _str('/'), A2(Text.color, black, A2(Text.height, 2, bold(x))));}(toText(_str('AI in Elm')));
+      return A4(container, w_13, 60, midLeft, text(ttl_14));}();};
+  var heading_4 = F2(function(outer_15, inner_16){
     return function(){
-      var header_18 = A4(container, outer_16, 60, middle, A2(beside, title_3((inner_17-widthOf(buttons_2))), buttons_2));
-      return layers(_L.Cons(A2(flow, down, _L.Cons(A2(color, lightGrey, A2(spacer, outer_16, 58)),_L.Cons(A2(color, mediumGrey, A2(spacer, outer_16, 1)),_L.Nil))),_L.Cons(header_18,((_N.cmp(outer_16,800).ctor==='LT')?_L.Nil:_L.Cons(A2(width, outer_16, veiwSource_4),_L.Nil)))));}();});
-  var skeleton_6 = F2(function(bodyFunc_19, outer_20){
+      var header_17 = A4(container, outer_15, 60, middle, A2(beside, title_3((inner_16-widthOf(buttons_2))), buttons_2));
+      return layers(_L.Cons(A2(flow, down, _L.Cons(A2(color, lightGrey, A2(spacer, outer_15, 58)),_L.Cons(A2(color, mediumGrey, A2(spacer, outer_15, 1)),_L.Nil))),_L.Cons(header_17,_L.Nil)));}();});
+  var skeleton_5 = F2(function(bodyFunc_18, outer_19){
     return function(){
-      var inner_21 = ((_N.cmp(outer_20,840).ctor==='LT')?(outer_20-40):800);
-      var body_22 = bodyFunc_19(inner_21);
-      return A2(flow, down, _L.Cons(A2(heading_5, outer_20, inner_21),_L.Cons(A2(spacer, outer_20, 10),_L.Cons(A4(container, outer_20, heightOf(body_22), middle, body_22),_L.Cons(function(x){
-        return A4(container, outer_20, 50, midBottom, Text.centered(x));}(_L.append(A2(Text.color, A3(rgb, 145, 145, 145), Text.toText(_str('&copy; 2011-2013 '))),A2(Text.link, _str('https://github.com/evancz'), Text.toText(_str('Evan Czaplicki'))))),_L.Nil)))));}();});
+      var inner_20 = ((_N.cmp(outer_19,840).ctor==='LT')?(outer_19-40):800);
+      var body_21 = bodyFunc_18(inner_20);
+      return A2(flow, down, _L.Cons(A2(heading_4, outer_19, inner_20),_L.Cons(A2(spacer, outer_19, 10),_L.Cons(A4(container, outer_19, heightOf(body_21), middle, body_21),_L.Cons(function(x){
+        return A4(container, outer_19, 50, midBottom, Text.centered(x));}(_L.append(A2(Text.color, A3(rgb, 145, 145, 145), Text.toText(_str('&copy; 2013 '))),A2(Text.link, _str('https://github.com/deadfoxygrandpa'), Text.toText(_str('Alex Neslusan'))))),_L.Nil)))));}();});
   var navigation_0 = Input.customButtons(_str(''));
-  var buttons_2 = A2(flow, right, A2(map, button_1, _L.Cons({ctor:"Tuple3", _0:_str('About'), _1:_str('/About.elm'), _2:accent1},_L.Cons({ctor:"Tuple3", _0:_str('Examples'), _1:_str('/Examples.elm'), _2:accent2},_L.Cons({ctor:"Tuple3", _0:_str('Docs'), _1:_str('/Documentation.elm'), _2:accent3},_L.Cons({ctor:"Tuple3", _0:_str('Download'), _1:_str('/Download.elm'), _2:accent4},_L.Nil))))));
-  var veiwSource_4 = text('<div style="height:0;width:0;">&nbsp;</div><p><a href="javascript:var p=top.location.pathname;if(p.slice(0,5)!=\'/edit\')top.location.href=\'/edit\'+(p==\'/\'?\'/Elm.elm\':p);"> <img style="position: absolute; top: 0; right: 0; border: 0;"\n     src="/ribbon.gif"\n     alt="View Page Source"> </a></p><div style="height:0;width:0;">&nbsp;</div>');
-  var redirect_7 = A2(lift,JS.fromString,navigation_0.events);
-  lift(function(v) { var e = document.createEvent('Event');e.initEvent('redirect_' + elm.id, true, true);e.value = v;document.dispatchEvent(e); return v; })(redirect_7);
+  var buttons_2 = A2(flow, right, A2(map, button_1, _L.Cons({ctor:"Tuple3", _0:_str('About2'), _1:_str('/About.elm'), _2:accent1},_L.Cons({ctor:"Tuple3", _0:_str('Examples2'), _1:_str('/Examples.elm'), _2:accent2},_L.Cons({ctor:"Tuple3", _0:_str('Docs2'), _1:_str('/Documentation.elm'), _2:accent3},_L.Cons({ctor:"Tuple3", _0:_str('Download2'), _1:_str('/Download.elm'), _2:accent4},_L.Nil))))));
+  var redirect_6 = A2(lift,JS.fromString,navigation_0.events);
+  lift(function(v) { var e = document.createEvent('Event');e.initEvent('redirect_' + elm.id, true, true);e.value = v;document.dispatchEvent(e); return v; })(redirect_6);
   elm.Native = elm.Native||{};
   elm.Native.Website = elm.Native.Website||{};
   var _ = elm.Native.Website.Skeleton||{};
@@ -5496,10 +5495,9 @@ Elm.Website.Skeleton = function(elm){
   _.button = button_1;
   _.buttons = buttons_2;
   _.title = title_3;
-  _.veiwSource = veiwSource_4;
-  _.heading = heading_5;
-  _.skeleton = skeleton_6;
-  _.redirect = redirect_7
+  _.heading = heading_4;
+  _.skeleton = skeleton_5;
+  _.redirect = redirect_6
   elm.Website = elm.Website||{};
   return elm.Website.Skeleton = _;
   };

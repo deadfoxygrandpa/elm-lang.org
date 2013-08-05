@@ -22,10 +22,10 @@ main = simpleHTTP nullConf $ do
          docsPath <- liftIO $ Elm.docs
          compressedResponseFilter
          heck <- liftIO $ readFile "public/Test.elm"
-         msum [ nullDir >> compileFile "Elm.elm"
+         msum [ nullDir >> compileFile "Index.elm"
               , serveDirectory DisableBrowsing [] "resources"
               , dir "try" (ok $ toResponse $ emptyIDE)
-              , dir "compile" $ compilePart (linkedElmToHtml "Compiled Elm" "LINK" heck)
+              , dir "compile" $ compilePart (linkedElmToHtml "Compiled Elm" "{- AGENT -}" heck)
               , dir "hotswap" $ compilePart elmToJS
               , dir "jsondocs" $ serveFile (asContentType "text/json") docsPath
               , dir "edit" . uriRest $ withFile ide
